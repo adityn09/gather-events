@@ -15,12 +15,14 @@ Adithyan P B · Sahrdaya College of Engineering and Technology
 
 ## Publication and submission
 
+Hosted application: https://gather-events-adityn09.onrender.com
+
 - [x] Public repository exists: https://github.com/adityn09/gather-events.
 - [x] Publish the full source using Adithyan's authorized account.
-- [ ] Configure a separate Atlas database user and hosting account for this project.
-- [ ] Deploy over HTTPS and create a production organizer.
-- [ ] Repeat all core flows on the hosted URL.
-- [ ] Add the verified live URL and cloud acceptance results to the documents.
+- [x] Configure a separate Atlas database user and hosting account for this project.
+- [x] Deploy over HTTPS and create a production organizer.
+- [x] Repeat all core flows on the hosted URL.
+- [x] Add the verified live URL and cloud acceptance results to the documents.
 - [ ] Confirm the actual institutional deadline and topic approval, if required.
 - [ ] Review the learning guide and practise explaining the implementation.
 - [ ] Upload the SRS to its assignment.

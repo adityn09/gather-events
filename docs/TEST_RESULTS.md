@@ -1,6 +1,8 @@
 # Gather verification results
 
-Verified on 24 October 2026. These are local results, not evidence of a hosted deployment.
+Verified on 24 October 2026. Local and hosted checks are recorded separately below.
+
+Hosted application: https://gather-events-adityn09.onrender.com. Public repository: https://github.com/adityn09/gather-events.
 
 ## Automated checks
 
@@ -27,10 +29,30 @@ At http://127.0.0.1:5174:
 - Checked desktop at 1440 x 1000 and mobile at 390 x 844. Mobile document client width and scroll width were both 375 CSS pixels, including while the ticket dialog was open.
 - Captured major views and checked the browser error log query, which returned no entries.
 
-The app uses only fictional demonstration identities, schedules and attendance. Screenshots are local, and some were captured at different stages of the walkthrough, so their counts can differ.
+The app uses only fictional demonstration identities, schedules and attendance. The final screenshots were recaptured from the hosted application at different stages of the walkthrough, so their counts can differ.
+
+## Hosted HTTPS checks
+
+All 24 API acceptance checks passed against the hosted service: database health; anonymous access; organizer login; Secure/HttpOnly/SameSite cookie flags; student authentication and role; forged-role rejection; organizer draft access and student draft privacy; direct draft privacy; attendee and CSV permission checks; reservation, duplicate rejection, persistence, cancellation and seat release; search and pagination validation; browser-origin protection; SPA refresh; organizer CSV export; logout cookie clearing.
+
+The hosted browser walkthrough also passed:
+
+- Registered Demo Visitor and reserved a seat.
+- Confirmed the first ticket and session persisted after refresh.
+- Created and published the fictional Student makers meetup as organizer.
+- Reserved the meetup, confirmed cancellation released the seat, and rebooked.
+- Checked Demo Visitor in during the permitted window and observed Present.
+- Downloaded the attendance CSV and confirmed it contained Demo Visitor.
+- Signed in as the student and confirmed the Attended badge persisted after refresh.
+- Checked desktop at 1440 x 1000 and mobile at 390 x 844. Mobile document client and scroll widths were both 375 CSS pixels, including with the ticket dialog open.
+- Recaptured all eight major-view screenshots from the hosted application. Browser error/warning logs returned no entries.
+
+Render reported a successful live deployment of application commit b442720decc3100747e786b3863eb6609b8d7b0e. The service uses Node 22, Singapore, free compute, a database health check, and private MongoDB/session environment variables. Atlas user gather_app is restricted to readWrite on gather and Cluster0; Render's two displayed outbound ranges were allowed. The setup IP rule was configured to expire automatically after six hours. No credentials are included in this document or repository.
+
+One later browser login timed out and succeeded on retry; the live health endpoint returned HTTP 200 in 626 ms. Render free instances sleep after inactivity and can take 50 seconds or more to wake.
 
 ## Remaining verification
 
-External production MongoDB, hosted HTTPS acceptance, sustained availability, institutional integration, concurrent load benchmarks and independent accessibility/security audits remain pending. The Dockerfile is supplied but has not been built here. No email, payment, QR scanning, attendance certificates or biometric verification are implemented.
+Sustained availability, institutional integration, concurrent load benchmarks and independent accessibility/security audits remain unverified. The Dockerfile is supplied but has not been built here. No email, payment, QR scanning, attendance certificates or biometric verification are implemented.
 
-Source formatting does not change application behavior. Repeat functional checks after substantive changes, and repeat the complete student/organizer flow on the live URL before submission.
+Source formatting does not change application behavior. Repeat functional checks after substantive changes, and rerun hosted acceptance after application changes.
