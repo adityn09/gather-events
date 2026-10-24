@@ -84,11 +84,13 @@ For a Node web service on Render:
 No production secrets are committed. Do not reuse another student's database credential or session secret.
 
 **Repository:** https://github.com/adityn09/gather-events (public).  
-**Live URL:** not deployed yet. Hosting will use Adithyan's own account.
+**Live URL:** https://gather-events-adityn09.onrender.com
+
+Deployed in Adithyan's Render account on free compute with a restricted Atlas user. Free instances sleep after inactivity; an initial visit can take 50 seconds or more. Retry a timed-out sign-in after the service wakes. Organizer credentials are in the private local setup file, outside this repository.
 
 ## Verification
 
-The production build and 20 MongoDB-backed API integration tests passed on 24 October 2026. docs/TEST_RESULTS.md records the browser checks and limitations. Official technical references: [MongoDB atomic operations](https://www.mongodb.com/docs/manual/core/write-operations-atomicity/), [React](https://react.dev/), [Express](https://expressjs.com/), and [Render Node deployment](https://render.com/docs/deploy-node-express-app).
+The production build, 20 MongoDB-backed integration tests and 24 hosted HTTPS API checks passed on 24 October 2026. docs/TEST_RESULTS.md records the browser checks and limitations. Official technical references: [MongoDB atomic operations](https://www.mongodb.com/docs/manual/core/write-operations-atomicity/), [React](https://react.dev/), [Express](https://expressjs.com/), and [Render Node deployment](https://render.com/docs/deploy-node-express-app).
 
 ## Limits and review
 
